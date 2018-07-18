@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import tech.friede.joshua.trivia.R
 
-class TrueFalseQuestion : AppCompatActivity() {
+class TrueFalseQuestionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,5 +16,6 @@ class TrueFalseQuestion : AppCompatActivity() {
     fun next(v: View) {
         val i = Intent(this, Finished::class.java)
         startActivity(i)
+        finish()
     }
 }
