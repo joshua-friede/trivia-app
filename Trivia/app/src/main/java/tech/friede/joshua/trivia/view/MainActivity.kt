@@ -9,6 +9,9 @@ import android.view.View
 
 import kotlinx.android.synthetic.main.activity_main.*
 import tech.friede.joshua.trivia.R
+import tech.friede.joshua.trivia.controller.Backend
+import tech.friede.joshua.trivia.model.Quiz
+import tech.friede.joshua.trivia.model.TrueFalseQuestion
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        val backend = Backend()
+
+        //dummy code
+        val dummyQuiz = Quiz()
+        val dummyQuestion = TrueFalseQuestion(0, "The sky is blue:")
+        dummyQuiz.addQuestion(dummyQuestion)
+        var selectedQuiz = dummyQuiz//backend.getQuiz()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -34,8 +44,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun startQuiz(v: View) {
-        val i = Intent(this, TrueFalseQuestion::class.java)
+    fun startQuiz(v: View, q: Quiz) {
+        val i = Intent(this, TrueFalseQuestionActivity::class.java)
+        //i.putExtra("backend", backend);
         startActivity(i)
     }
 }
