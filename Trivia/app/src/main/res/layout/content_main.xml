@@ -44,7 +44,7 @@
         android:layout_marginStart="32dp"
         android:text="@string/quiz_description"
         android:textAlignment="center"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
