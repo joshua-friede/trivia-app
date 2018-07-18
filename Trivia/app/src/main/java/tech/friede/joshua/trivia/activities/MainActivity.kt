@@ -1,14 +1,15 @@
-package tech.friede.joshua.trivia
+package tech.friede.joshua.trivia.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 
 import kotlinx.android.synthetic.main.activity_main.*
+import tech.friede.joshua.trivia.R
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
