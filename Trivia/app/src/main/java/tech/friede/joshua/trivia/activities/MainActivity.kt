@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startQuiz(v: View) {
-        val i = Intent(this, Finished::class.java)
+        val i = Intent(this, TrueFalseQuestion::class.java)
         startActivity(i)
     }
 }

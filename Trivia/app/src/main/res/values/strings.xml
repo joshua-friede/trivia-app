@@ -6,6 +6,13 @@
     <string name="quiz_title">Example Quiz</string>
     <string name="quiz_start_button">TAKE QUIZ</string>
 
+    <string name="next">Next</string>
+
     <string name="quiz_finished_message">You have completed the quiz!</string>
     <string name="quiz_finished_button">TAKE QUIZ AGAIN</string>
+
+    <string name="tf_question">This is some placeholder text for a true-false question. This is the hard-coded default until further functionality is added.</string>
+    <string name="t">True</string>
+    <string name="f">False</string>
+
 </resources>
