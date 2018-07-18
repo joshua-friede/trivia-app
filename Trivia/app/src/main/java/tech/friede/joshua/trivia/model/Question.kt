@@ -1,4 +1,4 @@
-package tech.friede.joshua.trivia.models
+package tech.friede.joshua.trivia.model
 
 abstract class Question {
     var number: Int

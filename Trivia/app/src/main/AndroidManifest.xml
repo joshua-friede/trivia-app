@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".view.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,8 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.Finished" />
-        <activity android:name=".activities.TrueFalseQuestion" />
+        <activity android:name=".view.Finished" />
+        <activity android:name=".view.TrueFalseQuestion" />
     </application>
 
 </manifest>

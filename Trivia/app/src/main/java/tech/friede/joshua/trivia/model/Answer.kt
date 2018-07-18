@@ -1,4 +1,4 @@
-package tech.friede.joshua.trivia.models
+package tech.friede.joshua.trivia.model
 
 open abstract class Answer {
     val number: Int

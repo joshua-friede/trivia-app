@@ -1,4 +1,4 @@
-package tech.friede.joshua.trivia.models
+package tech.friede.joshua.trivia.model
 
 class TrueFalseAnswer : Answer {
     override var answer: Boolean

@@ -1,4 +1,4 @@
-package tech.friede.joshua.trivia.activities
+package tech.friede.joshua.trivia.view
 
 import android.content.Intent
 import android.os.Bundle

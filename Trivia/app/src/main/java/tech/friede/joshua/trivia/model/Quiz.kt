@@ -1,4 +1,4 @@
-package tech.friede.joshua.trivia.models
+package tech.friede.joshua.trivia.model
 
 class Quiz {
     var name: String
