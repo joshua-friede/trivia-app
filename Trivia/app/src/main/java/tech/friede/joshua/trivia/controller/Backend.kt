@@ -2,8 +2,6 @@ package tech.friede.joshua.trivia.controller
 
 import tech.friede.joshua.trivia.model.*
 import java.io.File
-import java.io.FileReader
-import java.io.FileWriter
 
 class Backend {
     //val rootPath = ContextCompat.getFilesDir()
@@ -12,17 +10,15 @@ class Backend {
     fun createQuiz(quiz:Quiz): Boolean {
         val file = File(quiz.name + ".json")
         if(file.isFile) return false
-        file.writeText(GsonTools.UserToGson(quiz))
+        file.writeText(GSON.QuizToGson(quiz))
         return true
     }
 
-
-}
-
-object testBackend {
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val b = Backend()
-        println(b.createQuiz(Quiz()))
+    fun getQuiz(name:String): Quiz? {
+        val file = File(name + ".json")
+        if(!file.canRead()) return null
+        val gsonQuiz = file.readText()
+        return GSON.GsonToQuiz(gsonQuiz)
     }
+
 }
