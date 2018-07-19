@@ -15,11 +15,20 @@ class Finished : AppCompatActivity() {
         setContentView(R.layout.activity_finished)
     }
 
-    fun restartQuiz(v: View) {
+    fun restartQuiz() {
         Session.currentQuestion = 0
         Session.response = QuizResponse(quizName = Session.selectedQuiz.name)
         val i = Intent(this, MainActivity::class.java)
         startActivity(i)
+        finishAffinity()
+    }
+
+    fun next(v: View) {
+        restartQuiz()
+    }
+
+    override fun onBackPressed() {
+        restartQuiz()
     }
 
 

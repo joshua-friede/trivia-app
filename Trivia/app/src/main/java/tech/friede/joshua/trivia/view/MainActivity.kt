@@ -26,6 +26,7 @@ class MainActivity : QuizActivity() {
 
         Session.selectedQuiz = dummyQuiz//backend.getQuiz()
         Session.response = QuizResponse(quizName = Session.selectedQuiz.name)
+        Session.currentQuestion = 0
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

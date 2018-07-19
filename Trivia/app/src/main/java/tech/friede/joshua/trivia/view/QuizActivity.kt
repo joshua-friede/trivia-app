@@ -20,4 +20,9 @@ abstract class QuizActivity: AppCompatActivity() {
         }
         startActivity(i)
     }
+
+    override fun onBackPressed() {
+        Session.currentQuestion--
+        super.onBackPressed()
+    }
 }
