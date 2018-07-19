@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import tech.friede.joshua.trivia.R
+import tech.friede.joshua.trivia.controller.Session
+import tech.friede.joshua.trivia.model.QuizResponse
 
 class Finished : AppCompatActivity() {
 
@@ -14,6 +16,8 @@ class Finished : AppCompatActivity() {
     }
 
     fun restartQuiz(v: View) {
+        Session.currentQuestion = 0
+        Session.response = QuizResponse(quizName = Session.selectedQuiz.name)
         val i = Intent(this, MainActivity::class.java)
         startActivity(i)
     }
