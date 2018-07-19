@@ -19,10 +19,11 @@ abstract class QuizActivity: AppCompatActivity() {
             else -> i.setClass(this, Finished::class.java)
         }
         startActivity(i)
+        finish()
     }
 
-    override fun onBackPressed() {
+    /**override fun onBackPressed() {
         Session.currentQuestion--
         super.onBackPressed()
-    }
+    }**/
 }
