@@ -27,7 +27,7 @@ object Session {
         dummyQuiz.addQuestion(dummyQuestion3)
         Storage.createQuiz(dummyQuiz)
 
-        selectedQuizName = "dummyQuiz"
+        selectedQuizName = "dummyQuiz" // get from shared preferences eventually
         selectedQuiz = Storage.getQuiz(selectedQuizName)
         response = QuizResponse(selectedQuizName)
     }
