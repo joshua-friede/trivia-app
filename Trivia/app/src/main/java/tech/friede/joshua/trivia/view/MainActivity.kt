@@ -1,27 +1,17 @@
 package tech.friede.joshua.trivia.view
 
-import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-
 import kotlinx.android.synthetic.main.activity_main.*
 import tech.friede.joshua.trivia.R
-import tech.friede.joshua.trivia.controller.Backend
-import tech.friede.joshua.trivia.model.MultipleChoiceTriviaQuestion
+import tech.friede.joshua.trivia.controller.Session
 import tech.friede.joshua.trivia.model.Quiz
+import tech.friede.joshua.trivia.model.QuizResponse
 import tech.friede.joshua.trivia.model.TrueFalseAnswer
 import tech.friede.joshua.trivia.model.TrueFalseTriviaQuestion
 
-class MainActivity : AppCompatActivity() {
-
-    companion object {
-        lateinit var selectedQuiz: Quiz
-        var currentQuestion: Int = 0
-        val backend = Backend()
-    }
+class MainActivity : QuizActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +23,9 @@ class MainActivity : AppCompatActivity() {
         val a = TrueFalseAnswer("dummyQuestion1", true)
         val dummyQuestion = TrueFalseTriviaQuestion("dummyQuestion1", "The sky is blue:", a)
         dummyQuiz.addQuestion(dummyQuestion)
-        selectedQuiz = dummyQuiz//backend.getQuiz()
+
+        Session.selectedQuiz = dummyQuiz//backend.getQuiz()
+        Session.response = QuizResponse(quizName = Session.selectedQuiz.name)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -52,13 +44,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun startQuiz(v: View) {
-        val i = Intent()
-
-        when( selectedQuiz.questions[currentQuestion] ) {
-            is TrueFalseTriviaQuestion -> i.setClass(this, TrueFalseQuestionActivity::class.java)
-            is MultipleChoiceTriviaQuestion -> i.setClass(this, MultipleChoiceTriviaQuestion::class.java)
-        }
-        startActivity(i)
-    }
 }
