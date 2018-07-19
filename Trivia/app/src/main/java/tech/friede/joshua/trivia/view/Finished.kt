@@ -16,20 +16,19 @@ class Finished : AppCompatActivity() {
     }
 
     fun restartQuiz() {
-        Session.currentQuestion = 0
-        Session.response = QuizResponse(quizName = Session.selectedQuiz.name)
         val i = Intent(this, MainActivity::class.java)
         startActivity(i)
-        finishAffinity()
+        finish()
+
     }
 
     fun next(v: View) {
         restartQuiz()
     }
 
-    override fun onBackPressed() {
+    /**override fun onBackPressed() {
         restartQuiz()
-    }
+    }**/
 
 
 }
