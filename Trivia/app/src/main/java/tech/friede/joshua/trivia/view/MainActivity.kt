@@ -1,32 +1,34 @@
 package tech.friede.joshua.trivia.view
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import tech.friede.joshua.trivia.R
 import tech.friede.joshua.trivia.controller.Session
-import tech.friede.joshua.trivia.model.Quiz
-import tech.friede.joshua.trivia.model.QuizResponse
-import tech.friede.joshua.trivia.model.TrueFalseAnswer
+import tech.friede.joshua.trivia.model.MultipleChoiceTriviaQuestion
 import tech.friede.joshua.trivia.model.TrueFalseTriviaQuestion
 
-class MainActivity : QuizActivity() {
+class MainActivity : AppCompatActivity() {
+
+    companion object {
+        lateinit var c: Context
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        //dummy code
-        val dummyQuiz = Quiz("dummyQuiz")
-        val a = TrueFalseAnswer("dummyQuestion1", true)
-        val dummyQuestion = TrueFalseTriviaQuestion("dummyQuestion1", "The sky is blue:", a)
-        dummyQuiz.addQuestion(dummyQuestion)
+    }
 
-        Session.selectedQuiz = dummyQuiz//backend.getQuiz()
-        Session.response = QuizResponse(quizName = Session.selectedQuiz.name)
-        Session.currentQuestion = 0
+    override fun onResume() {
+        super.onResume()
+        c = applicationContext
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -43,6 +45,19 @@ class MainActivity : QuizActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun start(v: View) {
+        Session.currentQuestion = 1
+
+        val i = Intent()
+        when( Session.selectedQuiz.getQuestionN(Session.currentQuestion) ) {
+            is TrueFalseTriviaQuestion -> i.setClass(this, TrueFalseQuestionActivity::class.java)
+            is MultipleChoiceTriviaQuestion -> i.setClass(this, MultipleChoiceTriviaQuestion::class.java)
+            else -> i.setClass(this, Finished::class.java)
+        }
+        startActivity(i)
+        finish()
     }
 
 }
