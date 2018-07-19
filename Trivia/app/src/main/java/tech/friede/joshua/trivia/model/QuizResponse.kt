@@ -1,25 +1,20 @@
 package tech.friede.joshua.trivia.model
 
 class QuizResponse {
-    val surveyname: String
-    var answers: HashMap<Int, Answer>
+    val quizName: String
+    var answers: HashMap<String, Answer>
 
-    constructor(surveyname: String, answers: HashMap<Int, Answer>) {
-        this.surveyname = surveyname
+    constructor(quizName: String, answers: HashMap<String, Answer>) {
+        this.quizName = quizName
         this.answers = answers
     }
 
-    constructor(surveyname: String) {
-        this.surveyname = surveyname
+    constructor(quizName: String) {
+        this.quizName = quizName
         this.answers = hashMapOf()
     }
 
-    constructor() {
-        this.surveyname = ""
-        this.answers = hashMapOf<Int, Answer>()
-    }
-
     fun addAnswer(answer: Answer): Answer? {
-        return this.answers.put(answer.number, answer)
+        return this.answers.put(answer.id, answer)
     }
 }

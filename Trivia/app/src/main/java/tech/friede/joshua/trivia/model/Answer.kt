@@ -1,14 +1,11 @@
 package tech.friede.joshua.trivia.model
 
 open abstract class Answer {
-    val number: Int
+    val id: String
     abstract val answer: Any
 
-    constructor(number: Int) {
-        this.number = number
+    constructor(id: String) {
+        this.id = id
     }
 
-    constructor() {
-        this.number = 0
-    }
 }

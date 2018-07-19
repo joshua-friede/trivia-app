@@ -2,29 +2,23 @@ package tech.friede.joshua.trivia.model
 
 class Quiz {
     var name: String
-    val questions: HashMap<Int, Question>
-
-    constructor(name: String, questions: HashMap<Int, Question>) {
-        this.name = name
-        this.questions = questions
-    }
+    val questions: ArrayList<TriviaQuestion>
 
     constructor(name: String) {
         this.name = name
-        this.questions = hashMapOf()
+        this.questions = ArrayList()
     }
 
-    constructor() {
-        this.name = ""
-        this.questions = hashMapOf()
+    fun addQuestion(q: TriviaQuestion): Boolean {
+        return this.questions.add(q)
     }
 
-    fun addQuestion(q: Question):Question? {
-        return this.questions.put(q.number, q)
+    fun removeQuestionAt(index:Int): TriviaQuestion {
+        return this.questions.removeAt(index)
     }
 
-    fun deleteQuestion(number:Int): Question? {
-        return this.questions.remove(number)
+    fun questionsIterator(): Iterator<TriviaQuestion> {
+        return this.questions.iterator()
     }
 
 }
