@@ -11,7 +11,7 @@ object Storage : Application() {
 
     fun createQuiz(quiz: Quiz): Boolean {
         val file = File(path + quiz.name + ".json")
-        if (file.isFile) return false
+        //if (file.isFile) return false
         file.writeText(GSON.QuizToGson(quiz))
         return true
     }
