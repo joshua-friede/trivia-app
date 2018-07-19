@@ -2,7 +2,7 @@ package tech.friede.joshua.trivia.model
 
 class Quiz {
     var name: String
-    val questions: ArrayList<TriviaQuestion>
+    private val questions: ArrayList<TriviaQuestion>
 
     constructor(name: String) {
         this.name = name
@@ -13,12 +13,16 @@ class Quiz {
         return this.questions.add(q)
     }
 
-    fun removeQuestionAt(index:Int): TriviaQuestion {
-        return this.questions.removeAt(index)
+    fun getQuestionN(n: Int): TriviaQuestion? {
+        return this.questions.getOrNull(n-1)
     }
 
-    fun questionsIterator(): Iterator<TriviaQuestion> {
-        return this.questions.iterator()
+    fun removeQuestionN(index:Int): TriviaQuestion {
+        return this.questions.removeAt(index-1)
     }
+
+    /**fun questionsIterator(): Iterator<TriviaQuestion> {
+        return this.questions.iterator()
+    }**/
 
 }
