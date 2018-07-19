@@ -10,6 +10,7 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import tech.friede.joshua.trivia.R
 import tech.friede.joshua.trivia.controller.Backend
+import tech.friede.joshua.trivia.model.MultipleChoiceQuestion
 import tech.friede.joshua.trivia.model.Quiz
 import tech.friede.joshua.trivia.model.TrueFalseQuestion
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         var selectedQuiz: Quiz? = null
+        var currentQuestion: Int = 0
         val backend = Backend()
     }
 
@@ -49,7 +51,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startQuiz(v: View) {
-        val i = Intent(this, TrueFalseQuestionActivity::class.java)
+        val i = Intent()//this, TrueFalseQuestionActivity::class.java)
+        when( selectedQuiz!!.questions[currentQuestion] ) {
+            is TrueFalseQuestion -> i.setClass(this, TrueFalseQuestionActivity::class.java)
+            is MultipleChoiceQuestion -> i.setClass(this, MultipleChoiceQuestion::class.java)
+        }
         startActivity(i)
     }
 }
