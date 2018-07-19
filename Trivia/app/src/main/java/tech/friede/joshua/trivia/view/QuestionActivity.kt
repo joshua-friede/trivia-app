@@ -7,13 +7,13 @@ import tech.friede.joshua.trivia.controller.Session
 import tech.friede.joshua.trivia.model.MultipleChoiceTriviaQuestion
 import tech.friede.joshua.trivia.model.TrueFalseTriviaQuestion
 
-abstract class QuizActivity: AppCompatActivity() {
+abstract class QuestionActivity : AppCompatActivity() {
 
     fun next(v: View) {
         Session.currentQuestion++
         val i = Intent()
 
-        when( Session.selectedQuiz.getQuestionN(Session.currentQuestion) ) {
+        when (Session.selectedQuiz.getQuestionN(Session.currentQuestion)) {
             is TrueFalseTriviaQuestion -> i.setClass(this, TrueFalseQuestionActivity::class.java)
             is MultipleChoiceTriviaQuestion -> i.setClass(this, MultipleChoiceTriviaQuestion::class.java)
             else -> i.setClass(this, Finished::class.java)
@@ -22,8 +22,4 @@ abstract class QuizActivity: AppCompatActivity() {
         finish()
     }
 
-    /**override fun onBackPressed() {
-        Session.currentQuestion--
-        super.onBackPressed()
-    }**/
 }
