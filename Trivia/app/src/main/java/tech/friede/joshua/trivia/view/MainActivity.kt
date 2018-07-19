@@ -15,6 +15,8 @@ import tech.friede.joshua.trivia.model.TrueFalseQuestion
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var selectedQuiz: Quiz
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val dummyQuiz = Quiz()
         val dummyQuestion = TrueFalseQuestion(0, "The sky is blue:")
         dummyQuiz.addQuestion(dummyQuestion)
-        var selectedQuiz = dummyQuiz//backend.getQuiz()
+        selectedQuiz = dummyQuiz//backend.getQuiz()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -44,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun startQuiz(v: View, q: Quiz) {
+    fun startQuiz(v: View, q: Quiz = selectedQuiz) {
         val i = Intent(this, TrueFalseQuestionActivity::class.java)
         //i.putExtra("backend", backend);
         startActivity(i)
