@@ -15,13 +15,15 @@ import tech.friede.joshua.trivia.model.TrueFalseQuestion
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var selectedQuiz: Quiz
+    companion object {
+        var selectedQuiz: Quiz? = null
+        val backend = Backend()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        val backend = Backend()
 
         //dummy code
         val dummyQuiz = Quiz()
@@ -46,9 +48,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun startQuiz(v: View, q: Quiz = selectedQuiz) {
+    fun startQuiz(v: View) {
         val i = Intent(this, TrueFalseQuestionActivity::class.java)
-        //i.putExtra("backend", backend);
         startActivity(i)
     }
 }
