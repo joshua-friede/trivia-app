@@ -21,8 +21,4 @@ class Quiz {
         return this.questions.removeAt(index-1)
     }
 
-    /**fun questionsIterator(): Iterator<TriviaQuestion> {
-        return this.questions.iterator()
-    }**/
-
 }

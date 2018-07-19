@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             else -> i.setClass(this, Finished::class.java)
         }
         startActivity(i)
-        finish()
+
     }
 
 }
