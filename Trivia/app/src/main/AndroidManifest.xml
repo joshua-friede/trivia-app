@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".view.Finished" />
         <activity android:name=".view.TrueFalseActivity" />
+        <activity android:name=".view.MultipleChoiceActivity"></activity>
     </application>
 
 </manifest>

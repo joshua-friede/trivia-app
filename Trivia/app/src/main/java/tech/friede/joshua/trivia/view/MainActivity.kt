@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         val i = Intent()
         when( Session.selectedQuiz.getQuestionN(Session.currentQuestion) ) {
             is TrueFalse -> i.setClass(this, TrueFalseActivity::class.java)
-            is MultipleChoice -> i.setClass(this, MultipleChoice::class.java)
+            is MultipleChoice -> i.setClass(this, MultipleChoiceActivity::class.java)
             else -> i.setClass(this, Finished::class.java)
         }
         startActivity(i)

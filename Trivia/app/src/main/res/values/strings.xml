@@ -11,8 +11,10 @@
     <string name="quiz_finished_message">You have completed the quiz!</string>
     <string name="quiz_finished_button">TAKE QUIZ AGAIN</string>
 
-    <string name="tf_question">This is some placeholder text for a true-false question. This is the hard-coded default until further functionality is added.</string>
+    <string name="tf_question">This is some placeholder text for a true-false question. This should automatically be changed to the text of your question.</string>
     <string name="t">True</string>
     <string name="f">False</string>
+
+    <string name="mc_question">Placeholder text that should automatically be changed to the text of your question.</string>
 
 </resources>

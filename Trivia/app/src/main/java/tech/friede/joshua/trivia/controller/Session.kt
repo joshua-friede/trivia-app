@@ -2,6 +2,7 @@ package tech.friede.joshua.trivia.controller
 
 import tech.friede.joshua.trivia.model.Quiz
 import tech.friede.joshua.trivia.model.QuizResponse
+import tech.friede.joshua.trivia.model.questions.MultipleChoice
 import tech.friede.joshua.trivia.model.questions.TrueFalse
 
 
@@ -17,7 +18,7 @@ object Session {
         //dummy code
 
         val dummyQuiz = Quiz("dummyQuiz")
-        val dummyQuestion1 = TrueFalse("dummyQuestion1", "The sky is blue:", true)
+        val dummyQuestion1 = MultipleChoice("dummyQuestion1", "What color is the sky?", "red", "blue", "yellow", "orange", 'B')
         dummyQuiz.addQuestion(dummyQuestion1)
         val dummyQuestion2 = TrueFalse("dummyQuestion2", "The earth is round:", true)
         dummyQuiz.addQuestion(dummyQuestion2)
