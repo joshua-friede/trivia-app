@@ -4,19 +4,18 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import tech.friede.joshua.trivia.model.*
+import tech.friede.joshua.trivia.model.questions.MultipleChoice
+import tech.friede.joshua.trivia.model.questions.Question
+import tech.friede.joshua.trivia.model.questions.TrueFalse
 
 class GSON {
     companion object {
 
-        private val answerAdapterFactory: RuntimeTypeAdapterFactory<Answer> = RuntimeTypeAdapterFactory.of(Answer::class.java, "type")
-                .registerSubtype(MultipleChoiceAnswer::class.java)
-                .registerSubtype(TrueFalseAnswer::class.java)
+        private val QUESTION_ADAPTER_FACTORY: RuntimeTypeAdapterFactory<Question> = RuntimeTypeAdapterFactory.of(Question::class.java, "type")
+                .registerSubtype(MultipleChoice::class.java)
+                .registerSubtype(TrueFalse::class.java)
 
-        private val TRIVIA_QUESTION_ADAPTER_FACTORY: RuntimeTypeAdapterFactory<TriviaQuestion> = RuntimeTypeAdapterFactory.of(TriviaQuestion::class.java, "type")
-                .registerSubtype(MultipleChoiceTriviaQuestion::class.java)
-                .registerSubtype(TrueFalseTriviaQuestion::class.java)
-
-        private val mapper: Gson = GsonBuilder().registerTypeAdapterFactory(answerAdapterFactory).registerTypeAdapterFactory(TRIVIA_QUESTION_ADAPTER_FACTORY).create()
+        private val mapper: Gson = GsonBuilder().registerTypeAdapterFactory(QUESTION_ADAPTER_FACTORY).create()
 
 
 
@@ -68,14 +67,14 @@ class GSON {
             return mapper.fromJson(responses, conversionType)
         }
 
-        fun questionsMapToGson(questions: HashMap<Int, TriviaQuestion>): String {
-            val conversionType = object : TypeToken<HashMap<Int, TriviaQuestion>>() {}.type
+        fun questionsMapToGson(questions: HashMap<Int, Question>): String {
+            val conversionType = object : TypeToken<HashMap<Int, Question>>() {}.type
 
             return mapper.toJson(questions, conversionType)
         }
 
-        fun GsonToQuestionsMap(questions: String): HashMap<Int, TriviaQuestion> {
-            val conversionType = object : TypeToken<HashMap<Int, TriviaQuestion>>() {}.type
+        fun GsonToQuestionsMap(questions: String): HashMap<Int, Question> {
+            val conversionType = object : TypeToken<HashMap<Int, Question>>() {}.type
             //if(questions.isNullOrEmpty()) return hashMapOf()
             return mapper.fromJson(questions, conversionType)
         }

@@ -5,7 +5,7 @@ import kotlinx.android.synthetic.main.activity_true_false_question.*
 import tech.friede.joshua.trivia.R
 import tech.friede.joshua.trivia.controller.Session
 
-class TrueFalseQuestionActivity : QuestionActivity() {
+class TrueFalseActivity : QuestionActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

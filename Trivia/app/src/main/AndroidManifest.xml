@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.Finished" />
-        <activity android:name=".view.TrueFalseQuestionActivity" />
+        <activity android:name=".view.TrueFalseActivity" />
     </application>
 
 </manifest>

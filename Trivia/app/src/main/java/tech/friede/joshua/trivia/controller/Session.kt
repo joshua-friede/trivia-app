@@ -2,8 +2,7 @@ package tech.friede.joshua.trivia.controller
 
 import tech.friede.joshua.trivia.model.Quiz
 import tech.friede.joshua.trivia.model.QuizResponse
-import tech.friede.joshua.trivia.model.TrueFalseAnswer
-import tech.friede.joshua.trivia.model.TrueFalseTriviaQuestion
+import tech.friede.joshua.trivia.model.questions.TrueFalse
 
 
 object Session {
@@ -18,12 +17,11 @@ object Session {
         //dummy code
 
         val dummyQuiz = Quiz("dummyQuiz")
-        val a = TrueFalseAnswer("dummyQuestion1", true)
-        val dummyQuestion1 = TrueFalseTriviaQuestion("dummyQuestion1", "The sky is blue:", a)
+        val dummyQuestion1 = TrueFalse("dummyQuestion1", "The sky is blue:", true)
         dummyQuiz.addQuestion(dummyQuestion1)
-        val dummyQuestion2 = TrueFalseTriviaQuestion("dummyQuestion2", "The earth is round:", a)
+        val dummyQuestion2 = TrueFalse("dummyQuestion2", "The earth is round:", true)
         dummyQuiz.addQuestion(dummyQuestion2)
-        val dummyQuestion3 = TrueFalseTriviaQuestion("dummyQuestion3", "Kotlin is the best language:", a)
+        val dummyQuestion3 = TrueFalse("dummyQuestion3", "Kotlin is the best language:", true)
         dummyQuiz.addQuestion(dummyQuestion3)
         Storage.createQuiz(dummyQuiz)
 
