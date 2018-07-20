@@ -17,7 +17,7 @@ object Session {
     init {
         //dummy code
 
-        val dummyQuiz = Quiz("dummyQuiz")
+        val dummyQuiz = Quiz("000","Dummy Quiz", "This is a dummy quiz I created for testing purposes")
         val dummyQuestion1 = MultipleChoice("dummyQuestion1", "What color is the sky?", "red", "blue", "yellow", "orange", 'B')
         dummyQuiz.addQuestion(dummyQuestion1)
         val dummyQuestion2 = TrueFalse("dummyQuestion2", "The earth is round:", true)
@@ -26,7 +26,7 @@ object Session {
         dummyQuiz.addQuestion(dummyQuestion3)
         Storage.createQuiz(dummyQuiz)
 
-        selectedQuizID = "dummyQuiz" // get from shared preferences eventually
+        selectedQuizID = "000" // get from shared preferences eventually
         selectedQuiz = Storage.getQuiz(selectedQuizID)
         response = QuizResponse(selectedQuizID)
     }

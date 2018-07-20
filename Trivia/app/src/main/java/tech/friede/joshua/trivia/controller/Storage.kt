@@ -16,8 +16,8 @@ object Storage : Application() {
         return true
     }
 
-    fun getQuiz(name: String): Quiz {
-        val file = File(path + name + ".json")
+    fun getQuiz(id: String): Quiz {
+        val file = File(path + id + ".json")
         //if(!file.canRead()) return null
         val gsonQuiz = file.readText()
         return GSON.GsonToQuiz(gsonQuiz)
