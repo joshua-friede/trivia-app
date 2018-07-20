@@ -25,6 +25,7 @@
             android:layout_weight="1"
             android:paddingBottom="4dp"
             android:text="sample answer choice that will be overwritten"
+            android:textAlignment="viewStart"
             android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
         <RadioButton
@@ -33,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="sample answer choice that will be overwritten"
+            android:textAlignment="viewStart"
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
             tools:paddingBottom="4dp" />
 
@@ -58,12 +60,13 @@
         android:id="@+id/question_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
         android:text="@string/mc_question"
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textSize="26sp"
         app:layout_constraintBottom_toTopOf="@+id/mc_radio_group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -76,6 +79,7 @@
         android:layout_marginTop="32dp"
         android:onClick="next"
         android:text="@string/next"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
