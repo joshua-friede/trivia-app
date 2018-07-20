@@ -1,3 +1,7 @@
 package tech.friede.joshua.trivia.model.questions
 
-abstract class Question(id: String, text: String, correctAnswer: Any)
+abstract class Question(
+        val id: String,
+        val text: String,
+        val correctAnswer: Any
+)
