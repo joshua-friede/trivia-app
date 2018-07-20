@@ -7,7 +7,7 @@ import tech.friede.joshua.trivia.model.questions.TrueFalse
 
 object Session {
 
-    lateinit var selectedQuizName: String
+    lateinit var selectedQuizID: String
     lateinit var selectedQuiz: Quiz
     lateinit var response: QuizResponse
     var currentQuestion = 1
@@ -25,8 +25,8 @@ object Session {
         dummyQuiz.addQuestion(dummyQuestion3)
         Storage.createQuiz(dummyQuiz)
 
-        selectedQuizName = "dummyQuiz" // get from shared preferences eventually
-        selectedQuiz = Storage.getQuiz(selectedQuizName)
-        response = QuizResponse(selectedQuizName)
+        selectedQuizID = "dummyQuiz" // get from shared preferences eventually
+        selectedQuiz = Storage.getQuiz(selectedQuizID)
+        response = QuizResponse(selectedQuizID)
     }
 }
