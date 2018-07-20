@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 import tech.friede.joshua.trivia.R
 import tech.friede.joshua.trivia.controller.Session
 import tech.friede.joshua.trivia.model.questions.MultipleChoice
@@ -23,12 +24,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
     }
 
     override fun onResume() {
         super.onResume()
         c = applicationContext
+        quiz_title.text = Session.selectedQuiz.title
+        quiz_description.text = Session.selectedQuiz.description
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
