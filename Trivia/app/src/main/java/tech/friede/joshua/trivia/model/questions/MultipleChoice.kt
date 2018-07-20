@@ -1,3 +1,3 @@
 package tech.friede.joshua.trivia.model.questions
 
-class MultipleChoice(id: String, question: String, A: String, B: String, C: String, D: String, correctAnswer: Char) : Question(id, question, correctAnswer)
+data class MultipleChoice(val id: String, val question: String, val A: String, val B: String, val C: String, val D: String, val correctAnswer: Char) : Question(id, question, correctAnswer)

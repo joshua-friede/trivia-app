@@ -1,3 +1,3 @@
 package tech.friede.joshua.trivia.model.questions
 
-class TrueFalse(id: String, text: String, correctAnswer: Boolean) : Question(id, text, correctAnswer)
+data class TrueFalse(val id: String, val text: String, val correctAnswer: Boolean) : Question(id, text, correctAnswer)
