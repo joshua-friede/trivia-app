@@ -16,6 +16,7 @@
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/quiz_title"
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Title"
@@ -24,16 +25,19 @@
         app:layout_constraintBottom_toTopOf="@+id/quiz_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/take_quiz_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:layout_marginTop="32dp"
         android:onClick="start"
         android:text="@string/quiz_start_button"
-        android:textSize="24sp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quiz_description" />
@@ -47,6 +51,7 @@
         android:text="@string/quiz_description"
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
