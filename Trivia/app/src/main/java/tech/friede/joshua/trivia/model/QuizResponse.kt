@@ -9,7 +9,7 @@ class QuizResponse {
         this.answerSheet = hashMapOf()
     }
 
-    fun addAnswer(questionid: String, answer: Any) {
+    fun putAnswer(questionid: String, answer: Any) {
         answerSheet[questionid] = answer
     }
 }
