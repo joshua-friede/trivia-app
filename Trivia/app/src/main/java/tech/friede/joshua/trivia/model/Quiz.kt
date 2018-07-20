@@ -3,11 +3,11 @@ package tech.friede.joshua.trivia.model
 import tech.friede.joshua.trivia.model.questions.Question
 
 class Quiz {
-    var name: String
+    var id: String
     private val questions: ArrayList<Question>
 
     constructor(name: String) {
-        this.name = name
+        this.id = name
         this.questions = ArrayList()
     }
 

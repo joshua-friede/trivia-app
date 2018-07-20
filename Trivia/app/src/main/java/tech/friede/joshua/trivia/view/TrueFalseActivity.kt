@@ -11,7 +11,7 @@ class TrueFalseActivity : QuestionActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_true_false_question)
 
-        tf_question.text = Session.selectedQuiz.getQuestionN(Session.currentQuestion)!!.question
+        tf_question.text = Session.selectedQuiz.getQuestionN(Session.currentQuestion)!!.text
     }
 
 }

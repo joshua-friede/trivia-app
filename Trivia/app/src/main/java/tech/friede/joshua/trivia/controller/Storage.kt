@@ -10,7 +10,7 @@ object Storage : Application() {
     private val path = MainActivity.c.filesDir.absolutePath//applicationContext.filesDir.absolutePath
 
     fun createQuiz(quiz: Quiz): Boolean {
-        val file = File(path + quiz.name + ".json")
+        val file = File(path + quiz.id + ".json")
         //if (file.isFile) return false
         file.writeText(GSON.QuizToGson(quiz))
         return true
