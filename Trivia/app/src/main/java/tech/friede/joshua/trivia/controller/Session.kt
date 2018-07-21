@@ -18,7 +18,7 @@ object Session {
         //dummy code
 
         val dummyQuiz = Quiz("000","Dummy Quiz", "This is a dummy quiz I created for testing purposes")
-        val dummyQuestion1 = MultipleChoice("dummyQuestion1", "What color is the sky?", "red", "blue", "yellow", "orange", 'B')
+        val dummyQuestion1 = MultipleChoice("dummyQuestion1", "What color is the sky?", 'B', "blue", "yellow", "orange", "red")
         dummyQuiz.addQuestion(dummyQuestion1)
         val dummyQuestion2 = TrueFalse("dummyQuestion2", "The earth is round:", true)
         dummyQuiz.addQuestion(dummyQuestion2)
