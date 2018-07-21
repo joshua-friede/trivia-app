@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tf_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.TrueFalseActivity">
@@ -30,14 +31,14 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-        android:id="@+id/true_button"
+        android:id="@+id/option_true"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:onClick="onClick"
-        android:tag="True"
+        android:tag="true"
         android:text="@string/t"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,19 +47,19 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <Button
-        android:id="@+id/false_button"
+        android:id="@+id/option_false"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:onClick="onClick"
-        android:tag="False"
+        android:tag="false"
         android:text="@string/f"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/true_button" />
+        app:layout_constraintTop_toBottomOf="@+id/option_true" />
 
 </android.support.constraint.ConstraintLayout>

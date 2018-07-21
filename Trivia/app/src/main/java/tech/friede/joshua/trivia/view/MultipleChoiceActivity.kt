@@ -1,9 +1,11 @@
 package tech.friede.joshua.trivia.view
 
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import kotlinx.android.synthetic.main.activity_multiple_choice.*
 import tech.friede.joshua.trivia.R
 import tech.friede.joshua.trivia.controller.Session
@@ -25,15 +27,30 @@ class MultipleChoiceActivity : QuestionActivity() {
     }
 
     fun onClick(v: View) {
+
+        option_a.isClickable = false
+        option_b.isClickable = false
+        option_c.isClickable = false
+        option_d.isClickable = false
+
         val answer = v.tag.toString().single()
         Session.response.putAnswer(q.id, answer)
 
         if(q.correctAnswer == answer) {
             Log.d("answered", "correct")
+            v.setBackgroundColor(Color.GREEN)
+            Thread.sleep(1500)
             next(v)
         }
         else {
             Log.d("answered", "incorrect")
+            option_a.setBackgroundColor(Color.RED)
+            option_b.setBackgroundColor(Color.RED)
+            option_c.setBackgroundColor(Color.RED)
+            option_d.setBackgroundColor(Color.RED)
+            mc_container.findViewWithTag<Button>(q.correctAnswer.toString()).setBackgroundColor(Color.GREEN)
+            Thread.sleep(1500)
+            next(v)
         }
     }
 }

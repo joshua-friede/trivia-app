@@ -1,12 +1,16 @@
 package tech.friede.joshua.trivia.view
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import kotlinx.android.synthetic.main.activity_true_false.*
 import tech.friede.joshua.trivia.R
 import tech.friede.joshua.trivia.controller.Session
 import tech.friede.joshua.trivia.model.questions.TrueFalse
+
+
 
 class TrueFalseActivity : QuestionActivity() {
 
@@ -20,15 +24,26 @@ class TrueFalseActivity : QuestionActivity() {
     }
 
     fun onClick(v: View) {
+
+        option_true.isClickable = false
+        option_false.isClickable = false
+
         val answer = v.tag.toString().toBoolean()
         Session.response.putAnswer(q.id, answer)
 
         if(q.correctAnswer == answer) {
             Log.d("answered", "correct")
+            v.setBackgroundColor(Color.GREEN)
+            Thread.sleep(1500)
             next(v)
         }
         else {
             Log.d("answered", "incorrect")
+            option_true.setBackgroundColor(Color.RED)
+            option_false.setBackgroundColor(Color.RED)
+            tf_container.findViewWithTag<Button>(q.correctAnswer.toString()).setBackgroundColor(Color.GREEN)
+            Thread.sleep(1500)
+            next(v)
         }
     }
 

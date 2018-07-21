@@ -8,17 +8,17 @@ import tech.friede.joshua.trivia.model.questions.TrueFalse
 
 object Session {
 
-    lateinit var selectedQuizID: String
-    lateinit var selectedQuiz: Quiz
-    lateinit var response: QuizResponse
-    var currentQuestion = 1
+    var selectedQuizID: String
+    var selectedQuiz: Quiz
+    var response: QuizResponse
+    var currentQuestion: Int = 1
 
 
     init {
         //dummy code
 
         val dummyQuiz = Quiz("000","Dummy Quiz", "This is a dummy quiz I created for testing purposes")
-        val dummyQuestion1 = MultipleChoice("dummyQuestion1", "What color is the sky?", 'B', "blue", "yellow", "orange", "red")
+        val dummyQuestion1 = MultipleChoice("dummyQuestion1", "What color is the sky?", 'B', "yellow", "blue", "orange", "red")
         dummyQuiz.addQuestion(dummyQuestion1)
         val dummyQuestion2 = TrueFalse("dummyQuestion2", "The earth is round:", true)
         dummyQuiz.addQuestion(dummyQuestion2)
