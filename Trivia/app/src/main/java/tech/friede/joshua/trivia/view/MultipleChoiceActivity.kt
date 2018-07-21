@@ -3,9 +3,11 @@ package tech.friede.joshua.trivia.view
 
 import android.graphics.Color
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import kotlinx.android.synthetic.main.activity_finished.view.*
 import kotlinx.android.synthetic.main.activity_multiple_choice.*
 import tech.friede.joshua.trivia.R
 import tech.friede.joshua.trivia.controller.Session
@@ -39,6 +41,7 @@ class MultipleChoiceActivity : QuestionActivity() {
         if(q.correctAnswer == answer) {
             Log.d("answered", "correct")
             v.setBackgroundColor(Color.GREEN)
+            Snackbar.make(mc_container, "Correct!", Snackbar.LENGTH_INDEFINITE).show()
             Thread.sleep(1500)
             next(v)
         }
@@ -49,6 +52,7 @@ class MultipleChoiceActivity : QuestionActivity() {
             option_c.setBackgroundColor(Color.RED)
             option_d.setBackgroundColor(Color.RED)
             mc_container.findViewWithTag<Button>(q.correctAnswer.toString()).setBackgroundColor(Color.GREEN)
+            Snackbar.make(mc_container, "Incorrect", Snackbar.LENGTH_INDEFINITE).show()
             Thread.sleep(1500)
             next(v)
         }
