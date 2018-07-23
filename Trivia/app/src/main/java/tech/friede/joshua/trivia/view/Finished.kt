@@ -16,7 +16,7 @@ class Finished : AppCompatActivity() {
         setContentView(R.layout.activity_finished)
 
         Storage.createResponse(Session.response)
-        Log.d("responses", Storage.getResponses().toString())
+        Log.d("responses", Storage.getResponses(Session.selectedQuizID).toString())
     }
 
     fun reset(v: View) {

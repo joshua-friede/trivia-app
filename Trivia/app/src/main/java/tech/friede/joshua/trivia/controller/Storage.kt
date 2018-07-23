@@ -11,14 +11,13 @@ object Storage : Application() {
 
     private val path = MainActivity.c.filesDir.absolutePath//applicationContext.filesDir.absolutePath
     private val quizDir = path + File.separator + "quizzes"
-    private val responses = File(path + "responses.json")
+    private val responseDir = path + File.separator + "responses"
 
     init {
         val q = File(quizDir)
-        if (!q.exists()) {
-            q.mkdirs()
-        }
-        responses.delete()
+        val r = File(responseDir)
+        if (!q.exists()) q.mkdirs()
+        if (!r.exists()) r.mkdirs()
     }
 
     fun createQuiz(quiz: Quiz): Boolean {
@@ -36,13 +35,15 @@ object Storage : Application() {
     }
 
     fun createResponse(response: QuizResponse) {
-        responses.appendText(GSON.toGson(response) + "\n")
+        val file = File(responseDir + File.separator + response.quizid + ".json")
+        file.appendText(GSON.toGson(response) + "\n")
     }
 
-    fun getResponses(): List<QuizResponse> {
+    fun getResponses(quizid: String): List<QuizResponse> {
+        val file = File(responseDir + File.separator + quizid + ".json")
         val r = mutableListOf<QuizResponse>()
-        Log.d("responses", responses.readText())
-        responses.forEachLine { r.add(GSON.GsonToQuizResponse(it)) }
+        Log.d("responses", file.readText())
+        file.forEachLine { r.add(GSON.GsonToQuizResponse(it)) }
         return r
     }
 
