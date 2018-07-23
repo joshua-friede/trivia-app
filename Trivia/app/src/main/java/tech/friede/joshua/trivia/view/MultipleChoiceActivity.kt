@@ -7,7 +7,6 @@ import android.support.design.widget.Snackbar
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import kotlinx.android.synthetic.main.activity_finished.view.*
 import kotlinx.android.synthetic.main.activity_multiple_choice.*
 import tech.friede.joshua.trivia.R
 import tech.friede.joshua.trivia.controller.Session
