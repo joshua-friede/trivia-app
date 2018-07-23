@@ -7,13 +7,16 @@ import android.util.Log
 import android.view.View
 import tech.friede.joshua.trivia.R
 import tech.friede.joshua.trivia.controller.Session
+import tech.friede.joshua.trivia.controller.Storage
 
 class Finished : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finished)
-        Log.d("answered", Session.response.answerSheet.toString())
+
+        Storage.createResponse(Session.response)
+        Log.d("responses", Storage.getResponses().toString())
     }
 
     fun reset(v: View) {

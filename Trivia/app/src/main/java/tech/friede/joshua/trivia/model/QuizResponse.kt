@@ -1,13 +1,8 @@
 package tech.friede.joshua.trivia.model
 
-class QuizResponse {
-    val quizid: String
-    val answerSheet: HashMap<String, Any>
+data class QuizResponse(val quizid: String) {
 
-    constructor(quizName: String) {
-        this.quizid = quizName
-        this.answerSheet = hashMapOf()
-    }
+    private val answerSheet: HashMap<String, Any> = hashMapOf()
 
     fun putAnswer(questionid: String, answer: Any) {
         answerSheet[questionid] = answer
