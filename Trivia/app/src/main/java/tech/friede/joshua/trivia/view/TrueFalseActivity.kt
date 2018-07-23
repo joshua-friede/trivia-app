@@ -36,7 +36,7 @@ class TrueFalseActivity : QuestionActivity() {
             Log.d("answered", "correct")
             v.setBackgroundColor(Color.GREEN)
             Snackbar.make(tf_container, "Correct!", Snackbar.LENGTH_INDEFINITE).show()
-            Thread.sleep(1500)
+            Thread.sleep(3000)
             next(v)
         }
         else {
@@ -45,7 +45,7 @@ class TrueFalseActivity : QuestionActivity() {
             option_false.setBackgroundColor(Color.RED)
             tf_container.findViewWithTag<Button>(q.correctAnswer.toString()).setBackgroundColor(Color.GREEN)
             Snackbar.make(tf_container, "Incorrect", Snackbar.LENGTH_INDEFINITE).show()
-            Thread.sleep(1500)
+            Thread.sleep(3000)
             next(v)
         }
     }
