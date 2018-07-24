@@ -40,7 +40,7 @@ class MultipleChoiceActivity : QuestionActivity() {
         if(q.correctAnswer == answer) {
             Log.d("answered", "correct")
             v.setBackgroundColor(Color.GREEN)
-            Snackbar.make(mc_container, "Correct!", Snackbar.LENGTH_INDEFINITE).setAction("Next") { next(v) }.show()
+            popupMessage(v, "Correct!")
         }
         else {
             Log.d("answered", "incorrect")
@@ -49,7 +49,7 @@ class MultipleChoiceActivity : QuestionActivity() {
             option_c.setBackgroundColor(Color.RED)
             option_d.setBackgroundColor(Color.RED)
             mc_container.findViewWithTag<Button>(q.correctAnswer.toString()).setBackgroundColor(Color.GREEN)
-            Snackbar.make(mc_container, "Incorrect", Snackbar.LENGTH_INDEFINITE).setAction("Next") { next(v) }.show()
+            popupMessage(v, "Incorrect")
         }
     }
 }

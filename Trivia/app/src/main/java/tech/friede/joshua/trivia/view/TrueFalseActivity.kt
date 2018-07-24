@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.activity_true_false.*
 import tech.friede.joshua.trivia.R
 import tech.friede.joshua.trivia.controller.Session
@@ -35,14 +36,14 @@ class TrueFalseActivity : QuestionActivity() {
         if(q.correctAnswer == answer) {
             Log.d("answered", "correct")
             v.setBackgroundColor(Color.GREEN)
-            Snackbar.make(tf_container, "Correct!", Snackbar.LENGTH_INDEFINITE).setAction("Next") { next(v) }.show()
+            popupMessage(v, "Correct!")
         }
         else {
             Log.d("answered", "incorrect")
             option_true.setBackgroundColor(Color.RED)
             option_false.setBackgroundColor(Color.RED)
             tf_container.findViewWithTag<Button>(q.correctAnswer.toString()).setBackgroundColor(Color.GREEN)
-            Snackbar.make(tf_container, "Incorrect", Snackbar.LENGTH_INDEFINITE).setAction("Next") { next(v) }.show()
+            popupMessage(v, "Incorrect")
         }
     }
 
