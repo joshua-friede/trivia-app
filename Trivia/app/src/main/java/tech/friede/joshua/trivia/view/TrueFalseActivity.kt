@@ -35,18 +35,14 @@ class TrueFalseActivity : QuestionActivity() {
         if(q.correctAnswer == answer) {
             Log.d("answered", "correct")
             v.setBackgroundColor(Color.GREEN)
-            Snackbar.make(tf_container, "Correct!", Snackbar.LENGTH_INDEFINITE).show()
-            Thread.sleep(3000)
-            next(v)
+            Snackbar.make(tf_container, "Correct!", Snackbar.LENGTH_INDEFINITE).setAction("Next") { next(v) }.show()
         }
         else {
             Log.d("answered", "incorrect")
             option_true.setBackgroundColor(Color.RED)
             option_false.setBackgroundColor(Color.RED)
             tf_container.findViewWithTag<Button>(q.correctAnswer.toString()).setBackgroundColor(Color.GREEN)
-            Snackbar.make(tf_container, "Incorrect", Snackbar.LENGTH_INDEFINITE).show()
-            Thread.sleep(3000)
-            next(v)
+            Snackbar.make(tf_container, "Incorrect", Snackbar.LENGTH_INDEFINITE).setAction("Next") { next(v) }.show()
         }
     }
 
