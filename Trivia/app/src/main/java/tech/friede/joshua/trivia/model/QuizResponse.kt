@@ -7,4 +7,8 @@ data class QuizResponse(val quizid: String) {
     fun putAnswer(questionid: String, answer: Any) {
         answerSheet[questionid] = answer
     }
+
+    fun getAnswers(): HashMap<String, Any> {
+        return this.answerSheet
+    }
 }
