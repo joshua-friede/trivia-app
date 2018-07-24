@@ -29,15 +29,16 @@ abstract class QuestionActivity : AppCompatActivity() {
     }
 
     fun popupMessage(v: View, message: String) {
+        // make snackbar bigger, use larger font size, and always fill parent width
         val params = v.layoutParams
         params.width = FrameLayout.LayoutParams.MATCH_PARENT
         var snackbar = Snackbar.make(v, message, Snackbar.LENGTH_INDEFINITE).setAction("Next >") { next(v) }
         snackbar.view.layoutParams.width = FrameLayout.LayoutParams.MATCH_PARENT
         snackbar.view.layoutParams.height = FrameLayout.LayoutParams.WRAP_CONTENT
         val sbText= snackbar.view.findViewById<TextView>(android.support.design.R.id.snackbar_text)
-        //sbText.height =
         sbText.textSize = 32.toFloat()
         snackbar.view.findViewById<Button>(android.support.design.R.id.snackbar_action).textSize = 32.toFloat()
+        
         snackbar.show()
     }
 
