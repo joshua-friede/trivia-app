@@ -15,6 +15,8 @@ class Quiz {
         this.questions = ArrayList()
     }
 
+    fun length(): Int = questions.size
+
     fun addQuestion(q: Question): Boolean {
         return this.questions.add(q)
     }
@@ -25,6 +27,14 @@ class Quiz {
 
     fun removeQuestionN(index:Int): Question {
         return this.questions.removeAt(index-1)
+    }
+
+    // return number of questions answered correctly
+    fun grade(response: QuizResponse): Int {
+        var score = 0
+        val answers = response.getAnswers()
+        this.questions.forEach{val id = it.id; if(it.correctAnswer == answers[id]) score++}
+        return score
     }
 
 }
