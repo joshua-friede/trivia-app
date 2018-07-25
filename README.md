@@ -1,5 +1,5 @@
 # About
-I am creating this trivia-app with the intention of deploying it on a tablet at a booth. Everything will happen on-device - the owner will be able to set up a quiz in a protected panel that visitors will be able to take.
+I am creating this trivia-app with Kotlin for Android with the intention of deploying it on a tablet at a booth. Everything will happen on-device - the owner will be able to set up a quiz in a protected panel that visitors will be able to take.
 
 # Current Features
 - Visitor can take a quiz consisting of multiple-choice/true-false
