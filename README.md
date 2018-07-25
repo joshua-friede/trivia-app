@@ -7,8 +7,8 @@ I am creating this trivia-app with Kotlin for Android with the intention of depl
 - App will store quizzes and results on private internal storage
 
 # Backlog
-- Owner will be able to build quizzes within the application
+- Owner will be able to access a protected panel to build quizzes
 - Owner will be able to set the current quiz that users will take
-- Owner will be able to view response data and statistics
+- Owner will be able to view per-quiz response data and statistics
 
 
