@@ -1,13 +1,14 @@
 # About
-I am creating this trivia-app with the intention of deploying it on a tablet at an educational booth to quiz users and collect metrics.
+I am creating this trivia-app with the intention of deploying it on a tablet at a booth. Everything will happen on-device - the owner will be able to manage quizzes and results and let visitors take quizzes.
 
 # Current Features
-- User can take a quiz consisting of multiple-choice/true-false
-- Receive immediate feedback after each answer
-- Store quizzes and results on private internal storage
+- Visitor can take a quiz consisting of multiple-choice/true-false
+- Visitor will receive immediate feedback after each answer
+- App will store quizzes and results on private internal storage
 
 # Backlog
-- An admin panel with a quiz builder supporting multiple-choice and true-false questions
-- Metrics visualization within admin panel
+- Owner will be able to build quizzes within the application
+- Owner will be able to set the current quiz that users will take
+- Owner will be able to view response data and statistics
 
 
